@@ -10,7 +10,7 @@
     <link href="img/logo/logo.png" rel="icon">
     <title>Lake Side - Admin Login</title>
     <link href="{{ asset('dist/img/logo/logo.png') }}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{ asset('dist/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dist/css/style.css') }}" rel="stylesheet">
 </head>
@@ -20,22 +20,22 @@
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="image/coffe-shop.jpg" class="img-fluid" alt="Sample image">
+                    <img src="{{ asset('dist/img/coffe-shop.jpg') }}" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form action="product-menu.html">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="text" name="uname" id="form3Example3" class="form-control form-control-lg"
+                            <input type="text" name="uname" id="uname" class="form-control form-control-lg"
                                 placeholder="Enter your username" required />
-                            <label class="form-label" for="form3Example3">Username</label>
+                            <label class="form-label" for="uname">Username</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <input type="password" name="password" id="form3Example4"
+                            <input type="password" name="password" id="password"
                                 class="form-control form-control-lg" placeholder="Enter password" required />
-                            <label class="form-label" for="form3Example4">Password</label>
+                            <label class="form-label" for="password">Password</label>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center">
@@ -63,7 +63,7 @@
             style="background-color: #323164;">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
-                Copyright ©2023. All rights reserved.
+                Copyright ©<script> document.write(new Date().getFullYear()); </script>. All rights reserved.
             </div>
             <!-- Copyright -->
 

@@ -20,10 +20,6 @@
     background-color: #323164 !important;
 }
 
-.form-control {
-    border-radius: 4.25rem;
-}
-
 .navbar-text {
     color: #FFFFFF;
 }
@@ -34,10 +30,38 @@
 }
 
 .card-post img {
-    object-fit:scale-down; /* Do not scale the image */
-    object-position: center; /* Center the image within the element */
-  }
+    object-fit: scale-down;
+    /* Do not scale the image */
+    object-position: center;
+    /* Center the image within the element */
+}
 
-img {
-    background: url(http://goo.gl/vyAs27) no-repeat scroll 0 0;
-  }
+a {
+    text-decoration: none;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.breadcrumb .mdi::before {
+    position: relative;
+    top: 4px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover span {
+    text-decoration: underline;
+}
+
+.container,
+.container-fluid,
+.container-login {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}

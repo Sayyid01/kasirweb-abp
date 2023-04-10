@@ -5,7 +5,8 @@
 <meta name="author" content="">
 <title>@yield('title')</title>
 <link href="{{ asset('dist/img/logo/logo.png') }}" rel="shortcut icon" type="image/x-icon">
-<link href="{{ asset('dist/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('dist/vendor/splide/css/splide.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('dist/css/style.css') }}" rel="stylesheet">
 @stack('css')

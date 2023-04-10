@@ -1,0 +1,43 @@
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+.navbar.bg-light {
+    background-color: #323164 !important;
+}
+
+.form-control {
+    border-radius: 4.25rem;
+}
+
+.navbar-text {
+    color: #FFFFFF;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    float: left;
+}
+
+.card-post img {
+    object-fit:scale-down; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+  }
+
+img {
+    background: url(http://goo.gl/vyAs27) no-repeat scroll 0 0;
+  }

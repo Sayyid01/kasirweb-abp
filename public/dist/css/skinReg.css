@@ -1,0 +1,60 @@
+.navbar{
+    background-color: #141264;
+    width: 100%px;
+}
+.navbar-bottom{
+    position:absolute;
+    width: 100%;
+    height: 70px;
+    top: 675px;
+    background-color: #141264;
+}
+
+
+.card-title{
+    margin-top: 30px;
+    margin-left: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 49px;
+    position: absolute;
+}
+.global-container{
+    justify-content: center;
+    padding-top: 100px;
+    color: black;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"]{
+    background: #FED2A1;
+    color: black;
+    border: none ;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    width: 95%;
+    height: 85px;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 35px;
+    border: 4px #141264;
+    
+}
+.from-regis{
+    text-align: center;
+    
+}
+.btn {
+    background: #141264 ;
+    color: rgb(255, 255, 255) ;   
+    /* font-size: 25px; */
+    border-radius:20px ;
+    border: none;
+    
+
+    
+}

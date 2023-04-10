@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controllers\Auth\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.admin.login');
-})->name('login');
-
-Route::get('admin/login', 'Auth\AdminAuthController@getLogin')->name('admin.login');
-Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
+Route::get('/admin', [AdminController::class, 'getLogin'])->name('admin.login');
+Route::post('/admin', [AdminController::class, 'postLogin']);
 
 Route::middleware('auth:admin')->group(function () {
     //GET Index
     Route::get('pages.stock')->name('stock');
-    Route::get('admin/logout', 'Auth\AdminAuthController@postLogout')->name('admin.logout');
+    // Route::get('admin/logout', 'Auth\AdminAuthController@postLogout')->name('admin.logout');
 });

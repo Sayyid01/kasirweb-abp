@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class AdminAuthController extends Controller
+class AdminController extends Controller
 {
     use AuthenticatesUsers;
 

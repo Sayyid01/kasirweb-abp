@@ -23,18 +23,46 @@
                     <img src="{{ asset('dist/img/coffe-shop.jpg') }}" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="product-menu.html">
+                    <form method="POST" action="">
+                        @csrf
+                        @if (session('errors'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                Something it's wrong:
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('error') }}
+                            </div>
+                        @endif
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="text" name="uname" id="uname" class="form-control form-control-lg"
-                                placeholder="Enter your username" required />
-                            <label class="form-label" for="uname">Username</label>
+                            <input type="email" name="email" id="email"
+                                class="form-control form-control-lg
+                                @error('email') is-invalid @enderror"
+                                name="email" aria-describedby="emailHelp" value="{{ old('email') }}"
+                                placeholder="Enter your email" required autofocus />
+                            <label class="form-label" for="email">Username</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
                             <input type="password" name="password" id="password"
-                                class="form-control form-control-lg" placeholder="Enter password" required />
+                                class="form-control form-control-lg @error('password') is-invalid @enderror"
+                                placeholder="Enter password" required />
                             <label class="form-label" for="password">Password</label>
                         </div>
 
@@ -50,7 +78,7 @@
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" class="btn btn-lg" onclick="login()"
+                            <button type="submit" class="btn btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #323164; color: white;">Login</button>
                             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register.html"
                                     class="link-danger">Register</a></p>
@@ -63,7 +91,10 @@
             style="background-color: #323164;">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
-                Copyright ©<script> document.write(new Date().getFullYear()); </script>. All rights reserved.
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>. All rights reserved.
             </div>
             <!-- Copyright -->
 

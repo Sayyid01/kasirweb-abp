@@ -4,7 +4,7 @@
 @section('title-2', 'Product')
 
 @section('content')
-    <section class="container mt-5" id="drink">
+    <section class="container mb-5" id="drink">
         <p class="text-start fs-2">Drink's Menu</p>
         <div id="slider1" class="row splide">
             <div class="splide__track">
@@ -137,7 +137,7 @@
         </div>
     </section>
 
-    <section class="container mt-5">
+    <section class="container mb-5">
         <p class="text-start fs-2">Food's Menu</p>
         <div id="slider2" class="row splide">
             <div class="splide__track">

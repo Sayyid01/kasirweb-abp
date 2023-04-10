@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('auth.admin.login');
+})->name('login');
 
-Route::get('/login', function () {
-    return view('/pages/product');
+Route::get('admin/login', 'Auth\AdminAuthController@getLogin')->name('admin.login');
+Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
+
+Route::middleware('auth:admin')->group(function () {
+    //GET Index
+    Route::get('pages.stock')->name('stock');
+    Route::get('admin/logout', 'Auth\AdminAuthController@postLogout')->name('admin.logout');
 });

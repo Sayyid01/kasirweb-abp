@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Purchase</a>
                     <a class="nav-link" href="#">Promo</a>
-                    <a class="nav-link" href="#">Stock Up</a>
+                    <a class="nav-link" href="{{route('stock')}}">Stock Up</a>
                 </li>
             </ul>
         </div>

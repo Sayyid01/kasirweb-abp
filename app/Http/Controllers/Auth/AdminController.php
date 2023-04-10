@@ -33,7 +33,7 @@ class AdminController extends Controller
         if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
-            return redirect()->intended('admin/home');
+            return redirect()->intended('/home');
         } else {
             $this->incrementLoginAttempts($request);
 
@@ -49,6 +49,6 @@ class AdminController extends Controller
         auth()->guard('admin')->logout();
         session()->flush();
 
-        return redirect()->route('admin.login');
+        return redirect()->route('auth.admin.login');
     }
 }

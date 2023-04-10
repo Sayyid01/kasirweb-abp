@@ -28,9 +28,6 @@
                         @if (session('errors'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 Something it's wrong:
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -51,9 +48,7 @@
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="email" name="email" id="email"
-                                class="form-control form-control-lg
-                                @error('email') is-invalid @enderror"
-                                name="email" aria-describedby="emailHelp" value="{{ old('email') }}"
+                                class="form-control form-control-lg @error('email') is-invalid @enderror"
                                 placeholder="Enter your email" required autofocus />
                             <label class="form-label" for="email">Username</label>
                         </div>

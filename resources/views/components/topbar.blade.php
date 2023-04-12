@@ -13,7 +13,7 @@
                     <a class="nav-link" href="/product">Purchase</a>
                     <a class="nav-link" href="#">Promo</a>
                     <a class="nav-link" href="/home">Stock Up</a>
-                    <a class="nav-link" href="{{route('admin.logout')}}">Logout</a>
+                    <a class="nav-link" href="{{route('adminLogout')}}">Logout</a>
                 </li>
             </ul>
         </div>

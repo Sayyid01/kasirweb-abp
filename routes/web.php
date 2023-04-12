@@ -14,7 +14,7 @@ use App\Http\Controllers\Auth;
 |
 */
 
-Route::get('/admin', [Auth\AdminController::class, 'getLogin'])->name('auth.admin.login');
+Route::get('/admin', [Auth\AdminController::class, 'getLogin'])->name('adminLogin');
 Route::post('/admin', [Auth\AdminController::class, 'postLogin']);
 
 Route::middleware('auth:admin')->group(function () {
@@ -25,5 +25,5 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/product', function () {
         return view('pages.product');
     })->name('product');
-    Route::get('/', [Auth\AdminController::class, 'postLogout'])->name('admin.logout');
+    Route::get('/login', [Auth\AdminController::class, 'postLogout'])->name('adminLogout');
 });

@@ -49,6 +49,6 @@ class AdminController extends Controller
         auth()->guard('admin')->logout();
         session()->flush();
 
-        return redirect()->route('auth.admin.login');
+        return redirect()->route('adminLogin');
     }
 }

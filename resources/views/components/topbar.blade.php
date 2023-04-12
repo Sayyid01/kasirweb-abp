@@ -10,9 +10,9 @@
         <div class="ms-auto me-3">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Purchase</a>
+                    <a class="nav-link" href="/product">Purchase</a>
                     <a class="nav-link" href="#">Promo</a>
-                    <a class="nav-link" href="{{route('stock')}}">Stock Up</a>
+                    <a class="nav-link" href="/home">Stock Up</a>
                     <a class="nav-link" href="{{route('admin.logout')}}">Logout</a>
                 </li>
             </ul>

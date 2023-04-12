@@ -19,8 +19,11 @@ Route::post('/admin', [Auth\AdminController::class, 'postLogin']);
 
 Route::middleware('auth:admin')->group(function () {
     //GET Index
-    Route::get('/home',function(){
+    Route::get('/home', function () {
         return view('pages.stock');
-    })->name('stock');
+    });
+    Route::get('/product', function () {
+        return view('pages.product');
+    })->name('product');
     Route::get('/', [Auth\AdminController::class, 'postLogout'])->name('admin.logout');
 });

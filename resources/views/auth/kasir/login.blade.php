@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="img/logo/logo.png" rel="icon">
-    <title>Lake Side - Admin Login</title>
+    <title>Lake Side - Kasir Login</title>
     <link href="{{ asset('dist/img/logo/logo.png') }}" rel="shortcut icon" type="image/x-icon">
     <link href="{{ asset('dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <section class="vh-100" style="background-color: rgb(59, 58, 75); color:white;">
+    <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="{{ asset('dist/img/CoolCoffeeAdminBackground.jpg') }}" class="img-fluid" alt="Sample image">
+                    <img src="{{ asset('dist/img/coffe-shop.jpg') }}" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form method="POST" action="">
@@ -76,7 +76,7 @@
                             <button type="submit" class="btn btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #323164; color: white;">Login</button>
                             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register.html"
-                                    class="link-danger">you're the admin right?</a></p>
+                                    class="link-danger">Ask The Admin</a></p>
                         </div>
                     </form>
                 </div>

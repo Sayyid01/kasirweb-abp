@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.adminMaster')
 
 @section('title', 'Product')
 @section('title-2', 'Product')
@@ -269,4 +269,18 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            new Splide('#slider1', {
+                perPage: 4,
+                pagenation: false
+            }).mount();
+
+            new Splide('#slider2', {
+                perPage: 4,
+                pagenation: false
+            }).mount();
+        });
+    </script>
 @endsection

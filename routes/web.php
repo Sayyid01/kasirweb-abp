@@ -13,17 +13,14 @@ use App\Http\Controllers\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::view('/', 'auth.kasir.login');
 Route::get('/admin', [Auth\AdminController::class, 'getLogin'])->name('adminLogin');
 Route::post('/admin', [Auth\AdminController::class, 'postLogin']);
 
 Route::middleware('auth:admin')->group(function () {
     //GET Index
-    Route::get('/home', function () {
-        return view('pages.stock');
-    });
-    Route::get('/product', function () {
-        return view('pages.product');
-    })->name('product');
+    Route::view('/dashboard', 'pages.dashboardAdmin')->name('dashboard');
+    Route::view('/stock', 'pages.stock')->name('stock');
+    Route::view('/product', 'pages.product')->name('product');
     Route::get('/login', [Auth\AdminController::class, 'postLogout'])->name('adminLogout');
 });

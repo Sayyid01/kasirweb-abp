@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class AdminController extends Controller
 {
@@ -33,7 +34,7 @@ class AdminController extends Controller
         if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
-            return redirect()->intended('/home');
+            return redirect()->intended('/dashboard');
         } else {
             $this->incrementLoginAttempts($request);
 

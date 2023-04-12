@@ -1,10 +1,12 @@
-@extends('layouts.master')
+@extends('layouts.adminMaster')
 
 @section('title', 'Stock')
 @section('title-2', 'Stock')
 
 @section('content')
     <div class="container-m mt-5 vh-100">
+        <button type="button" class="btn btn-sm btn-primary float-end mb-2" data-bs-toggle="modal"
+            data-bs-target="#exampleModalCenter">Add Item</button>
         <table class="table table-hover table-sm">
             <thead>
                 <tr>
@@ -59,7 +61,6 @@
                 </tr>
             </tbody>
         </table>
-        <button type="button" class="btn btn-secondary position-relative" href="#">Add Item</button>
         <div class="position-relative">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
@@ -71,5 +72,33 @@
                 </ul>
             </nav>
         </div>
+
+        {{-- Modal Untuk Tambah Data --}}
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <label for="namaBarang">Nama Barang</label>
+                                <input type="text" name="" id="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 @endsection

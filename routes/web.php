@@ -24,3 +24,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::view('/product', 'pages.product')->name('product');
     Route::get('/login', [Auth\AdminController::class, 'postLogout'])->name('adminLogout');
 });
+// for customer
+Route::middleware(['auth:sanctum','verified'])->group(function () {
+    Route::gey('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
+    Route::gey('/user/orders',UserOrdersComponent::class)->name('user.orders');
+    Route::gey('/user/orders/{order_id}',UserDetailsComponent::class)->name('user.orderdetails');
+});

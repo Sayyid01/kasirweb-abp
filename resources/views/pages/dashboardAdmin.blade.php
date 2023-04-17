@@ -16,8 +16,8 @@
         </div>
         <div class="container justify-content-center">
             <ul>
-                <li><a class="nav-link" href="{{ route('product') }}">Product Management</a></li>
-                <li><a class="nav-link" href="{{ route('stock') }}">Stock Management</a></li>
+                <li><a class="nav-link" href="{{ route('produk') }}">Product Management</a></li>
+                <li><a class="nav-link" href="{{ route('stok') }}">Stock Management</a></li>
                 <li><a class="nav-link" href="{{ route('adminLogout') }}">Logout</a></li>
             </ul>
         </div>

@@ -8,8 +8,9 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
-                    <a class="nav-link" href="{{route('product')}}">Product Management</a>
-                    <a class="nav-link" href="{{route('stock')}}">Stock Management</a>
+                    <a class="nav-link" href="{{route('produk')}}">Product Management</a>
+                    <a class="nav-link" href="{{route('stok')}}">Stock Management</a>
+                    <a class="nav-link" href="#">Management Kasir</a>
                     <a class="nav-link" href="{{route('adminLogout')}}">Logout</a>
                 </li>
             </ul>

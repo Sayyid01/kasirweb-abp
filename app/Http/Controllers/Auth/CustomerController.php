@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class CustomerController extends Controller
 {
     use AuthenticatesUsers;
 
@@ -15,12 +15,12 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('postLogout');
+        $this->middleware('guest:customer')->except('postLogout');
     }
 
     public function getLogin()
     {
-        return view('auth.admin.login');
+        return view('auth.customer.login');
     }
 
     public function postLogin(Request $request)
@@ -30,7 +30,7 @@ class AdminController extends Controller
             'password' => 'required|min:5'
         ]);
 
-        if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {
+        if (auth()->guard('customer')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
             return redirect()->intended('/dashboard');
@@ -44,11 +44,16 @@ class AdminController extends Controller
         }
     }
 
+    public function custRegister(){
+        return view('auth.customer.register');
+    }
+
     public function postLogout()
     {
-        auth()->guard('admin')->logout();
+        auth()->guard('customer')->logout();
         session()->flush();
 
-        return redirect()->route('adminLogin');
+        return redirect()->route('customerLogin');
     }
+
 }

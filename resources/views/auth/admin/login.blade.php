@@ -75,7 +75,7 @@
                         <div class="text-center text-lg-start mt-4 pt-2">
                             <button type="submit" class="btn btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #323164; color: white;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register.html"
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href=""
                                     class="link-danger">you're the admin right?</a></p>
                         </div>
                     </form>

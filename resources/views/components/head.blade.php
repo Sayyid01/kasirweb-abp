@@ -8,5 +8,6 @@
 <link href="{{ asset('dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('dist/vendor/splide/css/splide.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 <link href="{{ asset('dist/css/style.css') }}" rel="stylesheet">
 @stack('css')

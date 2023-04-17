@@ -1,16 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticable;
 use Illuminate\Notifications\Notifiable;
 
-class Admin extends Authenticable
+class Kasir extends Authenticable
 {
     use Notifiable;
 
-    protected $guard = 'admin';
+    protected $guard = 'customer';
 
     protected $fillable = [
         'name', 'email', 'username', 'password','email_verfied_at'

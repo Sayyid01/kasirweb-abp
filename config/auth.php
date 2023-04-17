@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'kasir',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'kasir',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'kasir',
             'hash' => false,
         ],
 
@@ -52,9 +52,13 @@ return [
             'provider' => 'admins',
          ],
 
-         'user' => [
+         'kasir' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'kasir',
+         ],
+         'customer' => [
+            'driver' => 'session',
+            'provider' => 'customer',
          ],
     ],
 
@@ -83,7 +87,15 @@ return [
 
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => App\Models\Admin::class,
+        ],
+        'kasir' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Kasir::class,
+        ],
+        'customer' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
         ],
     ],
 
@@ -103,15 +115,21 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'kasir' => [
+            'provider' => 'kasir',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
 
         'admins' => [
-            'provider' => 'users',
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'customer' => [
+            'provider' => 'customer',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

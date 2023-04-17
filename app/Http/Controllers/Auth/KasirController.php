@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class KasirController extends Controller
 {
     use AuthenticatesUsers;
 
@@ -15,12 +15,12 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('postLogout');
+        $this->middleware('guest:kasir')->except('postLogout');
     }
 
     public function getLogin()
     {
-        return view('auth.admin.login');
+        return view('auth.kasir.login');
     }
 
     public function postLogin(Request $request)
@@ -30,7 +30,7 @@ class AdminController extends Controller
             'password' => 'required|min:5'
         ]);
 
-        if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {
+        if (auth()->guard('kasir')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
             return redirect()->intended('/dashboard');
@@ -46,9 +46,9 @@ class AdminController extends Controller
 
     public function postLogout()
     {
-        auth()->guard('admin')->logout();
+        auth()->guard('kasir')->logout();
         session()->flush();
 
-        return redirect()->route('adminLogin');
+        return redirect()->route('kasirLogin');
     }
 }

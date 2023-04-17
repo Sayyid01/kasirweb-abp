@@ -33,7 +33,7 @@ class AdminController extends Controller
         if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('admin/dashboard');
         } else {
             $this->incrementLoginAttempts($request);
 

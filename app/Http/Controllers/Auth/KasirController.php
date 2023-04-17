@@ -33,7 +33,7 @@ class KasirController extends Controller
         if (auth()->guard('kasir')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('kasir/produk');
         } else {
             $this->incrementLoginAttempts($request);
 

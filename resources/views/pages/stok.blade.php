@@ -25,8 +25,6 @@
             </thead>
             <tbody class="table-group-divider">
                 @if ($stok->count())
-
-
                     @foreach ($stok as $stok)
                         @php
                             $number++;
@@ -136,7 +134,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="last_update">Last Update</label>
-                                <input type="date" id="last_update" class="form-control lastUpdate" name="last_update"
+                                <input type="date" class="form-control lastUpdate" name="last_update"
+                                    value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
                                     style="opacity: 0.5;background-color: #eee;cursor: not-allowed;" disabled>
                             </div>
                         </div>

@@ -129,4 +129,12 @@ class ProdukCardController extends Controller
                 ->delete();
         }
     }
+
+    public function getTableProdukKasir()
+    {
+        $produkDrink = DB::table('produk_drink')->get();
+        $produkFood = DB::table('produk_food')->get();
+
+        return view('pages.produkKasir', compact('produkDrink', 'produkFood'));
+    }
 }

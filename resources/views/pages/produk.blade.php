@@ -123,8 +123,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="last_update" class="form-label">Last Update</label>
-                                <input type="date" id="last_update" class="form-control lastUpdate"
-                                    name="last_update" format="yyyy-mm-dd"
+                                <input type="date" class="form-control lastUpdate" name="last_update"
+                                    value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
                                     style="opacity: 0.5;background-color: #eee;cursor: not-allowed;" disabled>
                             </div>
                         </div>
@@ -249,7 +249,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="keterangan" class="form-label">Keterangan</label>
-                                <textarea class="form-control" name="keterangan" id="keterangan_food" placeholder="Keterangan" rows="3" required></textarea>
+                                <textarea class="form-control" name="keterangan" id="keterangan_food" placeholder="Keterangan" rows="3"
+                                    required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="jml_stok" class="form-label">Jumlah Stok</label>
@@ -258,8 +259,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="last_update" class="form-label">Last Update</label>
-                                <input type="date" id="last_update_food" class="form-control lastUpdate"
-                                    name="last_update" format="yyyy-mm-dd"
+                                <input type="date" class="form-control lastUpdate" name="last_update"
+                                    value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
                                     style="opacity: 0.5;background-color: #eee;cursor: not-allowed;" disabled>
                             </div>
                         </div>

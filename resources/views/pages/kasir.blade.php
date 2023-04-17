@@ -11,8 +11,8 @@
 
     <div class="container-m mt-5 vh-100">
         <button type="button" class="btn btn-sm btn-primary float-end mb-2" data-bs-toggle="modal"
-            data-bs-target="#addStokData">Add Item</button>
-        <table class="table table-hover table-sm" id="stok_table">
+            data-bs-target="#addKasirData">Daftarkan Kasir</button>
+        <table class="table table-hover table-sm" id="kasir_table">
             <thead>
                 <tr>
                     <th scope="col">No</th>
@@ -20,28 +20,26 @@
                     <th scope="col">Email</th>
                     <th scope="col">Tanggal Masuk</th>
                     <th scope="col">Last Update</th>
-                    <th scope="col"></th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                @if ($stok->count())
-
-
-                    @foreach ($stok as $stok)
+                @if ($kasirData->count())
+                    @foreach ($kasirData as $kasir)
                         @php
                             $number++;
                         @endphp
 
-                        <tr id="{{ $stok->id }}">
+                        <tr id="{{ $kasir->id }}">
                             <th scope="row">{{ $number }}</th>
-                            <td data-target="nama_barang">{{ $stok->nama_barang }}</td>
-                            <td data-target="jml_stok">{{ $stok->jml_stok }} KG</td>
-                            <td data-target="expired">{{ $stok->expired }}</td>
-                            <td data-target="last_update">{{ $stok->last_update }}</td>
-                            <td><button type="button" class="btn btn-success" data-id="{{ $stok->id }}"
-                                    data-role="updateStokData">Update</button>
-                                <button type="button" class="btn btn-warning" data-id="{{ $stok->id }}"
-                                    data-role="deleteStokData">Delete</button>
+                            <td data-target="name">{{ $kasir->name }}</td>
+                            <td data-target="email">{{ $kasir->email }}</td>
+                            <td data-target="created_at">{{ $kasir->created_at }}</td>
+                            <td data-target="updated_at">{{ $kasir->updated_at }}</td>
+                            <td><button type="button" class="btn btn-success" data-id="{{ $kasir->id }}"
+                                    data-role="updateKasirData">Update</button>
+                                <button type="button" class="btn btn-warning" data-id="{{ $kasir->id }}"
+                                    data-role="deleteKasirData">Delete</button>
                             </td>
                         </tr>
                     @endforeach
@@ -54,44 +52,52 @@
         </table>
 
         {{-- Modal Untuk Tambah Data --}}
-        <div class="modal fade" id="addStokData" tabindex="-1" role="dialog" aria-labelledby="addStokDataTitle"
+        <div class="modal fade" id="addKasirData" tabindex="-1" role="dialog" aria-labelledby="addKasirDataTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addStokDataLongTitle">Tambah Stok Data</h5>
+                        <h5 class="modal-title" id="addKasirDataLongTitle">Tambah Stok Data</h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ route('tambahStok') }}" method="POST">
+                    <form action="{{ route('tambahKasir') }}" method="POST">
                         <div class="modal-body">
                             @csrf
                             <div class="form-group">
-                                <label for="nama_barang">Nama Barang</label>
-                                <input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang"
+                                <label for="nama">Nama Kasir</label>
+                                <input type="text" class="form-control" name="nama" placeholder="Nama Kasir" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Kasir</label>
+                                <input type="email" class="form-control" name="email" placeholder="Email Kasir"
                                     required>
                             </div>
                             <div class="form-group">
-                                <label for="jml_stok">Jumlah Barang/KG</label>
-                                <input type="number" step="0.01" class="form-control" name="jml_stok"
-                                    placeholder="Jumlah Barang" required>
+                                <label for="password">Password Kasir</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password Kasir">
                             </div>
                             <div class="form-group">
-                                <label for="expired">Tanggal Expired</label>
-                                <input type="date" class="form-control" name="expired" placeholder="Tanggal Expired"
+                                <label for="confirm_password">Konfirmasi Password Kasir</label>
+                                <input type="password" class="form-control" name="confirm_password"
+                                    placeholder="Konfirmasi Password Kasir">
+                            </div>
+                            <div class="form-group">
+                                <label for="created_at">Tanggal Masuk</label>
+                                <input type="date" class="form-control" name="created_at" placeholder="Tanggal Masuk"
                                     format="yyyy-mm-dd" required>
                             </div>
                             <div class="form-group">
-                                <label for="last_update">Last Update</label>
-                                <input type="date" class="form-control lastUpdate" name="last_update"
+                                <label for="updated_at">Last Update</label>
+                                <input type="date" class="form-control lastUpdate" name="updated_at"
                                     value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
                                     style="opacity: 0.5;background-color: #eee;cursor: not-allowed;" disabled>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary" value="Tambah Item">
+                            <input type="submit" class="btn btn-primary" value="Daftarkan">
                         </div>
                     </form>
 
@@ -100,7 +106,7 @@
         </div>
 
         {{-- Modal Untuk Update Data --}}
-        <div class="modal fade" id="updateStokData" tabindex="-1" role="dialog" aria-labelledby="updateStokDataTitle"
+        <div class="modal fade" id="updateKasirData" tabindex="-1" role="dialog" aria-labelledby="updateStokDataTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -110,33 +116,37 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ route('updateStok') }}" method="POST">
+                    <form action="{{ route('updateKasir') }}" method="POST">
                         <div class="modal-body">
                             @csrf
                             <!-- di hidden karena ga perlu -->
                             <div class="form-group" hidden>
-                                <label for="id">Id Barang</label>
+                                <label for="id">Id</label>
                                 <input type="text" id="id" name="id" class="form-control" readonly>
                             </div>
 
                             <div class="form-group">
-                                <label for="nama_barang">Nama Barang</label>
-                                <input type="text" class="form-control" name="nama_barang" id="nama_barang"
-                                    placeholder="Nama Barang" required>
+                                <label for="nama">Nama Kasir</label>
+                                <input type="text" class="form-control" name="nama" id="name" placeholder="Nama Kasir" required>
                             </div>
                             <div class="form-group">
-                                <label for="jml_stok">Jumlah Barang/KG</label>
-                                <input type="number" step="0.01" class="form-control" name="jml_stok"
-                                    id="jml_stok" placeholder="Jumlah Barang" required>
+                                <label for="email">Email Kasir</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Kasir"
+                                    required>
                             </div>
                             <div class="form-group">
-                                <label for="expired">Tanggal Expired</label>
-                                <input type="date" class="form-control" name="expired" id="expired"
-                                    placeholder="Tanggal Expired" required>
+                                <label for="password">Password Kasir</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password Kasir">
                             </div>
                             <div class="form-group">
-                                <label for="last_update">Last Update</label>
-                                <input type="date" id="last_update" class="form-control lastUpdate" name="last_update"
+                                <label for="confirm_password">Konfirmasi Password Kasir</label>
+                                <input type="password" class="form-control" name="confirm_password"
+                                    placeholder="Konfirmasi Password Kasir">
+                            </div>
+                            <div class="form-group">
+                                <label for="updated_at">Last Update</label>
+                                <input type="date" class="form-control lastUpdate" name="updated_at"
+                                    value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
                                     style="opacity: 0.5;background-color: #eee;cursor: not-allowed;" disabled>
                             </div>
                         </div>

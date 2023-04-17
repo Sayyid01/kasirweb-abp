@@ -12,7 +12,7 @@ class Kasir extends Authenticable
     protected $guard = 'kasir';
 
     protected $fillable = [
-        'name', 'email', 'username', 'password','email_verfied_at'
+        'name', 'email', 'password','email_verfied_at'
     ];
 
     protected $hidden = ['password'];

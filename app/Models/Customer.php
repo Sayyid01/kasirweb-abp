@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticable;
 use Illuminate\Notifications\Notifiable;
 
-class Kasir extends Authenticable
+class Customer extends Authenticable
 {
     use Notifiable;
 

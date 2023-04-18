@@ -56,7 +56,7 @@ Route::get('/kasir', [Auth\KasirController::class, 'getLogin'])->name('kasirLogi
 Route::post('/kasir', [Auth\KasirController::class, 'postLogin']);
 
 Route::middleware('auth:kasir')->group(function () {
-    Route::get('/produk/{filename}', [Main\ProdukCardController::class, 'getGambarMenu'])->name('gambarMenu');
+    // Route::get('/produk/{filename}', [Main\ProdukCardController::class, 'getGambarMenu'])->name('gambarMenu');
     Route::get('/kasir/produk', [Main\ProdukCardController::class, 'getTableProdukKasir'])->name('produkKasir');
 
     Route::get('/loginKasir', [Auth\KasirController::class, 'postLogout'])->name('kasirLogout');

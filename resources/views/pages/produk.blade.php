@@ -121,7 +121,7 @@
                                 <input type="number" class="form-control" name="jml_stok" id="jml_stok"
                                     placeholder="Jumlah Stok" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <label for="last_update" class="form-label">Last Update</label>
                                 <input type="date" class="form-control lastUpdate" name="last_update"
                                     value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
@@ -257,7 +257,7 @@
                                 <input type="number" class="form-control" name="jml_stok" id="jml_stok_food"
                                     placeholder="Jumlah Stok" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <label for="last_update" class="form-label">Last Update</label>
                                 <input type="date" class="form-control lastUpdate" name="last_update"
                                     value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"

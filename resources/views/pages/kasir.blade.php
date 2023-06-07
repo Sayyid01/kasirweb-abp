@@ -88,7 +88,7 @@
                                 <input type="date" class="form-control" name="created_at" placeholder="Tanggal Masuk"
                                     format="yyyy-mm-dd" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <label for="updated_at">Last Update</label>
                                 <input type="date" class="form-control lastUpdate" name="updated_at"
                                     value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
@@ -143,7 +143,7 @@
                                 <input type="password" class="form-control" name="confirm_password"
                                     placeholder="Konfirmasi Password Kasir">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <label for="updated_at">Last Update</label>
                                 <input type="date" class="form-control lastUpdate" name="updated_at"
                                     value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"

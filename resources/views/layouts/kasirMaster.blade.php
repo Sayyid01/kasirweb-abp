@@ -18,7 +18,7 @@
                 <div class="container-fluid" id="container-wrapper">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Produckt</a></li>
+                            <li class="breadcrumb-item"><a href="#">Product</a></li>
                         </ol>
                     </div>
 

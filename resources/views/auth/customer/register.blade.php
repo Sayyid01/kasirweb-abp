@@ -57,12 +57,11 @@
 			text-align: center;
 			margin-top: 20px;
 			color: #000000;
+		}
+		.login-link a:hover {
+			color: #323164;
 			text-decoration: none;
 			cursor: pointer;
-		}
-		.login-link:hover {
-			color: #323164;
-			text-decoration: underline;
 		}
 	</style>
 </head>
@@ -82,7 +81,7 @@
 		<input type="password" placeholder="Enter Password" name="password" required>
 
 		<button type="submit">Register</button>
-		<a href="{{Route('customerLogin')}}" class="login-link">Already have an account? Log in</a>
+		<p class="login-link">Already have an account? <a href="{{Route('customerLogin')}}">Log in</a></p>
 	</form>
 </body>
 </html>

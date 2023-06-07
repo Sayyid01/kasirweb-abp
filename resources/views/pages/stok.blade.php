@@ -132,11 +132,11 @@
                                 <input type="date" class="form-control" name="expired" id="expired"
                                     placeholder="Tanggal Expired" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <label for="last_update">Last Update</label>
                                 <input type="date" class="form-control lastUpdate" name="last_update"
                                     value="<?= date('Y-m-d') ?>" format="yyyy-mm-dd"
-                                    style="opacity: 0.5;background-color: #eee;cursor: not-allowed;" disabled>
+                                    style="opacity: 0.5; background-color: #eee; cursor: not-allowed;" disabled>
                             </div>
                         </div>
                         <div class="modal-footer">

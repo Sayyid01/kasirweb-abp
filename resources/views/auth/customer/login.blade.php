@@ -56,12 +56,11 @@
 			text-align: center;
 			margin-top: 20px;
 			color: #000000;
-			text-decoration: none;
-			cursor: pointer;
 		}
-		.signup-link:hover {
+		.signup-link a:hover {
 			color: #9f9696;
-			text-decoration: underline;
+			cursor: pointer;
+            text-decoration: none;
 		}
 	</style>
 </head>
@@ -75,7 +74,7 @@
 		<input type="password" placeholder="Enter Password" name="password" required>
 
 		<button type="submit">Login</button>
-		<a href="{{Route('custRegister')}}" class="signup-link">Dont Have An Account? Sign up</a>
+		<p class="signup-link">Dont have an account? <a href="{{Route('custRegister')}}">Sign up</a></p>
 	</form>
 </body>
 </html>

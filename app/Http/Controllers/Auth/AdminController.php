@@ -10,9 +10,6 @@ class AdminController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $maxAttempts = 3;
-    protected $decayMinutes = 2;
-
     public function __construct()
     {
         $this->middleware('guest:admin')->except('postLogout');
@@ -33,7 +30,7 @@ class AdminController extends Controller
         if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('/admin/dashboard');
         } else {
             $this->incrementLoginAttempts($request);
 

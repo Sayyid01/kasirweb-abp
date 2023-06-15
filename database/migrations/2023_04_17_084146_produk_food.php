@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nama_menu');
             $table->string('foto_menu');
             $table->string('keterangan');
-            $table->integer('jml_stok');
+            $table->integer('jml_stok')->default(0);
+            $table->integer('harga')->default(0);
             $table->date('last_update');
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('produk_food');
     }
 };

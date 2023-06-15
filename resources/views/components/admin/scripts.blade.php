@@ -68,11 +68,13 @@
                 let nama_menu = $('#' + id).children('[data-target=nama_menu]').text();
                 let keterangan = $('#' + id).children('[data-target=keterangan]').text();
                 let jml_stok = $('#' + id).children('[data-target=jml_stok]').text();
+                let harga = $('#' + id).children('[data-target=harga]').text();
 
                 $('#id').val(id);
                 $('#nama_menu').val(nama_menu);
                 $('#keterangan').val(keterangan);
-                $('#jml_stok').val(parseFloat(jml_stok));
+                $('#jml_stok').val(jml_stok);
+                $('#harga').val(harga);
                 $('#updateMenuDrinkData').modal('toggle');
             });
 
@@ -94,11 +96,13 @@
                 let nama_menu = $('#' + id).children('[data-target=nama_menu]').text();
                 let keterangan = $('#' + id).children('[data-target=keterangan]').text();
                 let jml_stok = $('#' + id).children('[data-target=jml_stok]').text();
+                let harga = $('#' + id).children('[data-target=harga]').text();
 
                 $('#id_food').val(id);
                 $('#nama_menu_food').val(nama_menu);
                 $('#keterangan_food').val(keterangan);
-                $('#jml_stok_food').val(parseFloat(jml_stok));
+                $('#jml_stok_food').val(jml_stok);
+                $('#harga').val(harga);
                 $('#updateMenuFoodData').modal('toggle');
             });
 

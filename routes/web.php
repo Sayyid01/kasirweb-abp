@@ -21,7 +21,7 @@ Route::post('/admin', [Auth\AdminController::class, 'postLogin']);
 
 Route::middleware('auth:admin')->group(function () {
     //GET Index
-    Route::view('/admin/dashboard', 'pages.dashboardAdmin')->name('admDashboard');
+    Route::view('/admin/dashboard', 'pages.admin.dashboard')->name('admDashboard');
 
     //Stok
     Route::get('/stok', [Main\StokItemController::class, 'getTableStok'])->name('stok');
@@ -57,11 +57,11 @@ Route::post('/kasir', [Auth\KasirController::class, 'postLogin']);
 
 Route::middleware('auth:kasir')->group(function () {
     // Route::get('/produk/{filename}', [Main\ProdukCardController::class, 'getGambarMenu'])->name('gambarMenu');
-    Route::get('/kasir/produk', [Main\ProdukCardController::class, 'getTableProdukKasir'])->name('produkKasir');
+    Route::get('/kasir/menu', [Main\ProdukCardController::class, 'getTableProdukKasir'])->name('produkKasir');
 
     Route::get('/loginKasir', [Auth\KasirController::class, 'postLogout'])->name('kasirLogout');
 });
 
-Route::get('/customer', [Auth\CustomerController::class, 'getLogin'])->name('customerLogin');
+Route::get('/', [Auth\CustomerController::class, 'getLogin'])->name('customerLogin');
 Route::get('/custRegister', [Auth\CustomerController::class, 'custRegister'])->name('custRegister');
 Route::post('/customer', [Auth\CustomerController::class, 'postLogin']);

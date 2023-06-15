@@ -13,7 +13,7 @@ class StokItemController extends Controller
     {
         $stok = DB::table('stok_item')->get();
 
-        return view('pages.stok', compact('stok'));
+        return view('pages.admin.stok', compact('stok'));
     }
 
     //Menambah data stok_item

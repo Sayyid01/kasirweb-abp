@@ -22,6 +22,8 @@
                                     <p class="card-text" data-target="keterangan">{{ $produk->keterangan }}</p>
                                     <p class="card-text mb-0">Stok : </p>
                                     <p class="card-text" data-target="jml_stok">{{ $produk->jml_stok }}</p>
+                                    <p class="card-text float-start">Rp</p>
+                                    <p class="card-text" data-target="harga">{{ $produk->harga }}</p>
                                     <br>
                                     <button class="btn btn-success" data-id="{{ $produk->id }}"
                                         data-role='updateMenuDrinkData'>Update</button>
@@ -64,6 +66,11 @@
                             <div class="form-group">
                                 <label for="jml_stok" class="form-label">Jumlah Stok</label>
                                 <input type="number" class="form-control" name="jml_stok" placeholder="Jumlah Stok"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="harga" class="form-label">Harga Produk</label>
+                                <input type="number" class="form-control" name="harga" placeholder="Harga Produk"
                                     required>
                             </div>
                             <div class="form-group">
@@ -121,6 +128,11 @@
                                 <input type="number" class="form-control" name="jml_stok" id="jml_stok"
                                     placeholder="Jumlah Stok" required>
                             </div>
+                            <div class="form-group">
+                                <label for="harga" class="form-label">Harga Produk</label>
+                                <input type="number" class="form-control" name="harga" id="harga"
+                                    required>
+                            </div>
                             <div class="form-group" hidden>
                                 <label for="last_update" class="form-label">Last Update</label>
                                 <input type="date" class="form-control lastUpdate" name="last_update"
@@ -157,6 +169,8 @@
                                     <p class="card-text" data-target="keterangan">{{ $produk->keterangan }}</p>
                                     <p class="card-text mb-0">Stok : </p>
                                     <p class="card-text" data-target="jml_stok">{{ $produk->jml_stok }}</p>
+                                    <p class="card-text float-start">Rp</p>
+                                    <p class="card-text" data-target="harga">{{ $produk->harga }}</p>
                                     <br>
                                     <button class="btn btn-success" data-id="{{ $produk->id }}"
                                         data-role='updateMenuFoodData'>Update</button>
@@ -199,6 +213,11 @@
                             <div class="form-group">
                                 <label for="jml_stok" class="form-label">Jumlah Stok</label>
                                 <input type="number" class="form-control" name="jml_stok" placeholder="Jumlah Stok"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="harga" class="form-label">Harga Produk</label>
+                                <input type="number" class="form-control" name="harga" placeholder="Harga Produk"
                                     required>
                             </div>
                             <div class="form-group">
@@ -256,6 +275,11 @@
                                 <label for="jml_stok" class="form-label">Jumlah Stok</label>
                                 <input type="number" class="form-control" name="jml_stok" id="jml_stok_food"
                                     placeholder="Jumlah Stok" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="harga" class="form-label">Harga Produk</label>
+                                <input type="number" class="form-control" name="harga" id="harga"
+                                    required>
                             </div>
                             <div class="form-group" hidden>
                                 <label for="last_update" class="form-label">Last Update</label>

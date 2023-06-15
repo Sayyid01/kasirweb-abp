@@ -13,7 +13,7 @@ class KasirTableController extends Controller
     {
         $kasirData = DB::table('kasirs')->get();
 
-        return view('pages.kasir', compact('kasirData'));
+        return view('pages.admin.dataKasir', compact('kasirData'));
     }
 
     //Menambah data Kasir baru

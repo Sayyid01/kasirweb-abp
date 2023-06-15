@@ -16,7 +16,7 @@ class ProdukCardController extends Controller
         $produkDrink = DB::table('produk_drink')->get();
         $produkFood = DB::table('produk_food')->get();
 
-        return view('pages.produk', compact('produkDrink', 'produkFood'));
+        return view('pages.admin.produk', compact('produkDrink', 'produkFood'));
     }
 
     function getGambarMenu($filename)
@@ -45,6 +45,7 @@ class ProdukCardController extends Controller
                 'foto_menu' => $fileName,
                 'keterangan' => $request->keterangan,
                 'jml_stok' => $request->jml_stok,
+                'harga' => $request->harga,
                 'last_update' => $request->last_update
             ]);
 
@@ -60,6 +61,7 @@ class ProdukCardController extends Controller
                 'nama_menu' => $request->nama_menu,
                 'keterangan' => $request->keterangan,
                 'jml_stok' => $request->jml_stok,
+                'harga' => $request->harga,
                 'last_update' => $request->last_update
             ]);
         return redirect('/produk');
@@ -96,6 +98,7 @@ class ProdukCardController extends Controller
                 'foto_menu' => $fileName,
                 'keterangan' => $request->keterangan,
                 'jml_stok' => $request->jml_stok,
+                'harga' => $request->harga,
                 'last_update' => $request->last_update
             ]);
 
@@ -111,6 +114,7 @@ class ProdukCardController extends Controller
                 'nama_menu' => $request->nama_menu,
                 'keterangan' => $request->keterangan,
                 'jml_stok' => $request->jml_stok,
+                'harga' => $request->harga,
                 'last_update' => $request->last_update
             ]);
         return redirect('/produk');
@@ -135,6 +139,6 @@ class ProdukCardController extends Controller
         $produkDrink = DB::table('produk_drink')->get();
         $produkFood = DB::table('produk_food')->get();
 
-        return view('pages.produkKasir', compact('produkDrink', 'produkFood'));
+        return view('pages.kasir.produkKasir', compact('produkDrink', 'produkFood'));
     }
 }

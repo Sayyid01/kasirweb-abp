@@ -10,9 +10,6 @@ class KasirController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $maxAttempts = 3;
-    protected $decayMinutes = 2;
-
     public function __construct()
     {
         $this->middleware('guest:kasir')->except('postLogout');
@@ -33,7 +30,7 @@ class KasirController extends Controller
         if (auth()->guard('kasir')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             $this->clearLoginAttempts($request);
-            return redirect()->intended('kasir/produk');
+            return redirect()->intended('kasir/menu');
         } else {
             $this->incrementLoginAttempts($request);
 

@@ -12,7 +12,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 {{-- topbar --}}
-                @include('components.topbarAdmin')
+                @include('components.admin.topbar')
 
                 {{-- container fluid --}}
                 <div class="container-fluid" id="container-wrapper">
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    @include('components.scripts')
+    @include('components.admin.scripts')
 </body>
 
 </html>
